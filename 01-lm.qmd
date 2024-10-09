@@ -1,0 +1,74 @@
+# Linear Regression Analysis
+
+## Linear Model Specification
+
+- Economic model:$Y_{i} = \beta_{0} + \beta{X_{i1}} + ... + \beta{X_{ik}}$
+
+- Econometric model:$Y_{i} = \beta_{0} + \beta{X_{i1}} + ... + \beta{X_{ik}} + u_{i}$
+
+    + $u$: error term -- contains all the other variables that also affect the value of $Y$ but, for whatever reason, were not considered in the economic model.
+    
+    + $\beta$: parameters - unknowns that relate the dependent variable to each explanatory variable; the main aim of econometrics is to estimate their value
+    
+    + $i = 1, ..., N$
+    
+    + $k:$ number of explanatory variables
+    
+    + $p:$ number of parameters($= k + 1$)
+
+We can express the econometric model in a succinct way with matrix notation.
+
+$$
+y = X\beta + u
+$$
+
+$$
+y = \begin{bmatrix}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_N
+\end{bmatrix}, \quad
+X = \begin{bmatrix}
+1 & X_{11} & X_{12} & \cdots & X_{1k} \\
+1 & X_{21} & X_{22} & \cdots & X_{2k} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & X_{N1} & X_{N2} & \cdots & X_{Nk}
+\end{bmatrix}
+$$
+
+$$
+\beta = \begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_k
+\end{bmatrix}, \quad
+u = \begin{bmatrix}
+u_1 \\
+u_2 \\
+\vdots \\
+u_N
+\end{bmatrix}
+$$
+
+## Model Estimation
+
+- $\beta$ is unknown and needs to be estimated
+
+- Sample for $Y$ and $X$ is available, but not for $u$
+
+- How to estimate $\beta$?
+
+    + Model: $Y_{i} = \beta_{0} + \beta{X_{i1}} + ... + \beta{X_{ik}} + u_{i} \iff y = X\beta + u$
+    
+    + Fitted model: $\hat{Y}_{i} = \hat{\beta}_{0} + \hat{\beta}{X_{i1}} + ... + \hat{\beta}{X_{ik}} \iff \hat{y} = X\hat{\beta}$
+    
+    + Residuals: $\hat{u}_i = Y_i -  \hat{Y_i} \iff \hat{u} = y - \hat{y} \iff \hat{u} = y - X\hat{\beta}$
+    
+    + Method: Find the $\hat{\beta}$ that minimizes some function of $\hat{u}$
+    
+    + Most popular estimation method: Ordinary Least Squares(OLS)
+    
+        - $min \sum_{i=1}^{N} \hat{u_i}^2 \iff min \, \hat{u}^T \hat{u}$
+        

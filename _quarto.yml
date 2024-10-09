@@ -1,0 +1,21 @@
+project:
+  type: book
+  output-dir: "docs"  # Change to your desired output directory
+
+book:
+  title: "Yet another econometrics book"
+  author: "Bhaswar Chakma"
+  date: "10/9/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - 01-lm.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+

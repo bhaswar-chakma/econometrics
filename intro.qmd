@@ -1,0 +1,6 @@
+# Introduction
+
+See @ramalho2024lecture
+```{r}
+1 + 1
+```
